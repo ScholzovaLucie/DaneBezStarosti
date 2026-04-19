@@ -110,11 +110,11 @@ export const sharedContactItems = [
 ];
 
 export const personalContactItems = [
-  { label: 'Adresa', value: 'Zvole 100, 552 25 Rychnovek', icon: iconPin },
+  { label: 'Kancelář', value: 'Patrného 193, 551 01 Jaroměř', icon: iconPin },
   { label: 'IČO / DIČ', value: '74415301 / CZ8459133287', icon: iconId },
 ];
 
 export const companyContactItems = [
-  { label: 'Adresa', value: 'Královédvorská 249, 541 01 Trutnov', icon: iconPin },
+  { label: 'Kancelář', value: 'Královédvorská 249, 541 01 Trutnov', icon: iconPin },
   { label: 'IČO / DIČ', value: '08617562 / CZ08617562', icon: iconId },
 ];

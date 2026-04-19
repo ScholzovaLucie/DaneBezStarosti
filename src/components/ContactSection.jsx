@@ -6,10 +6,10 @@ import Reveal from './Reveal';
 
 const INIT = { from_name: '', reply_to: '', subject: '', message: '' };
 
-function ContactBlock({ title, subtitle, items }) {
+function ContactBlock({ title, subtitle, accent, items }) {
   return (
     <div className="c-block">
-      <div className="c-block-title">{title}</div>
+      <div className={`c-block-title${accent ? ' c-block-title--accent' : ''}`}>{title}</div>
       {subtitle && <div className="c-block-sub">{subtitle}</div>}
       {items.map(({ label, value, icon }) => (
         <div className="c-item" key={label}>
@@ -58,7 +58,7 @@ function ContactSection() {
 
         <div className="contact-grid">
           <div className="c-blocks">
-            <ContactBlock title="Společný kontakt" items={sharedContactItems} />
+            <ContactBlock title="Kontaktní údaje" items={sharedContactItems} />
             <div className="c-divider" />
             <ContactBlock
               title="Ing. Ivana Petrovická"
@@ -68,7 +68,9 @@ function ContactSection() {
             <div className="c-divider" />
             <ContactBlock
               title="Daně bez starostí s.r.o."
+              subtitle="Společnost zapsaná v KDP ČR"
               items={companyContactItems}
+              accent
             />
           </div>
 

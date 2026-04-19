@@ -589,6 +589,10 @@ section {
   margin-bottom: 0.2rem;
 }
 
+.c-block-title--accent {
+  color: var(--rose-light);
+}
+
 .c-block-sub {
   font-size: 0.78rem;
   color: var(--rose-light);
