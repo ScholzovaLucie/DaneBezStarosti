@@ -222,84 +222,45 @@ nav {
   color: var(--rose);
 }
 
-.hero-card {
-  background: var(--white);
-  border: 1px solid var(--rose-pale);
+.hero-avatar-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-avatar {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 16px;
-  padding: 2.2rem;
-  box-shadow: 0 8px 40px rgba(180, 80, 110, 0.08);
+  display: block;
+  box-shadow: 0 16px 48px rgba(180, 80, 110, 0.15);
 }
 
-.hero-card-name {
+.hero-avatar-badge {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.hero-avatar-name {
+  display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--gray-900);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
-.hero-card-role {
-  font-size: 0.8rem;
+.hero-avatar-role {
+  display: block;
+  font-size: 0.78rem;
   color: var(--rose);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 1.5rem;
-}
-
-.hero-divider {
-  height: 1px;
-  background: var(--rose-pale);
-  margin-bottom: 1.2rem;
-}
-
-.hero-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.55rem 0;
-  font-size: 0.875rem;
-  border-bottom: 1px solid var(--gray-100);
-}
-
-.hero-row:last-child {
-  border-bottom: none;
-}
-
-.hero-row-label {
-  color: var(--gray-400);
-}
-
-.hero-row-val {
-  color: var(--gray-900);
-  font-weight: 500;
-  text-align: right;
-}
-
-.hero-email {
-  font-size: 0.82rem;
-}
-
-.hero-badge {
-  margin-top: 1.4rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--rose-pale);
-  color: var(--rose-deep);
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-weight: 500;
-}
-
-.hero-badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--rose);
-  flex-shrink: 0;
 }
 
 section {
@@ -610,18 +571,40 @@ section {
   color: rgba(255, 255, 255, 0.45);
 }
 
-.c-name {
-  font-size: 1.4rem;
+.c-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.c-block {
+  padding-bottom: 1.6rem;
+}
+
+.c-block-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--white);
   margin-bottom: 0.2rem;
 }
 
-.c-role {
-  font-size: 0.8rem;
+.c-block-sub {
+  font-size: 0.78rem;
   color: var(--rose-light);
   letter-spacing: 0.06em;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.c-block:not(:has(.c-block-sub)) .c-block-title {
+  margin-bottom: 1.2rem;
+}
+
+.c-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.6rem;
 }
 
 .c-item {

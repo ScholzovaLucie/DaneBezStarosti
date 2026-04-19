@@ -25,27 +25,12 @@ function HeroSection() {
           </div>
         </div>
 
-        <Reveal className="hero-card">
-          <div className="hero-card-name">Ing. Ivana Petrovická</div>
-          <div className="hero-card-role">Daňový poradce</div>
-          <div className="hero-divider" />
-          <div className="hero-row">
-            <span className="hero-row-label">Osvědčení KDP</span>
-            <span className="hero-row-val">č. 4625</span>
+        <Reveal className="hero-avatar-wrap">
+          <img src="/img/avatar.jpeg" alt="Ing. Ivana Petrovická" className="hero-avatar" />
+          <div className="hero-avatar-badge">
+            <span className="hero-avatar-name">Ing. Ivana Petrovická</span>
+            <span className="hero-avatar-role">Daňový poradce · osvědčení č. 4625</span>
           </div>
-          <div className="hero-row">
-            <span className="hero-row-label">Telefon</span>
-            <span className="hero-row-val">+420 602 184 029</span>
-          </div>
-          <div className="hero-row">
-            <span className="hero-row-label">E-mail</span>
-            <span className="hero-row-val hero-email">petrovicka@danebezstarosti.cz</span>
-          </div>
-          <div className="hero-row">
-            <span className="hero-row-label">Sídlo</span>
-            <span className="hero-row-val">Zvole 100, 552 25 Rychnovek</span>
-          </div>
-          <div className="hero-badge">Člen Komory daňových poradců ČR</div>
         </Reveal>
       </div>
     </section>

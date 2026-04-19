@@ -1,14 +1,32 @@
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
-import { contactItems } from '../data/content';
+import { companyContactItems, personalContactItems, sharedContactItems } from '../data/content';
 import Icon from './Icon';
 import Reveal from './Reveal';
 
 const INIT = { from_name: '', reply_to: '', subject: '', message: '' };
 
+function ContactBlock({ title, subtitle, items }) {
+  return (
+    <div className="c-block">
+      <div className="c-block-title">{title}</div>
+      {subtitle && <div className="c-block-sub">{subtitle}</div>}
+      {items.map(({ label, value, icon }) => (
+        <div className="c-item" key={label}>
+          <div className="c-ico"><Icon paths={icon} /></div>
+          <div>
+            <div className="c-lbl">{label}</div>
+            <div className="c-val">{value}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ContactSection() {
   const [fields, setFields] = useState(INIT);
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [status, setStatus] = useState('idle');
 
   function handleChange(e) {
     setFields((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -39,21 +57,19 @@ function ContactSection() {
         <p className="section-sub">Zájem o spolupráci nebo otázka? Rádi se vám ozveme zpět.</p>
 
         <div className="contact-grid">
-          <div>
-            <div className="c-name">Ing. Ivana Petrovická</div>
-            <div className="c-role">Daňový poradce · č. osv. 4625</div>
-
-            {contactItems.map(({ label, value, icon }) => (
-              <div className="c-item" key={label}>
-                <div className="c-ico">
-                  <Icon paths={icon} />
-                </div>
-                <div>
-                  <div className="c-lbl">{label}</div>
-                  <div className="c-val">{value}</div>
-                </div>
-              </div>
-            ))}
+          <div className="c-blocks">
+            <ContactBlock title="Společný kontakt" items={sharedContactItems} />
+            <div className="c-divider" />
+            <ContactBlock
+              title="Ing. Ivana Petrovická"
+              subtitle="Daňový poradce · č. osv. 4625"
+              items={personalContactItems}
+            />
+            <div className="c-divider" />
+            <ContactBlock
+              title="Daně bez starostí s.r.o."
+              items={companyContactItems}
+            />
           </div>
 
           <Reveal as="form" className="contact-form" onSubmit={handleSubmit}>
